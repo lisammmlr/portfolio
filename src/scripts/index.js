@@ -23,6 +23,7 @@ const animateHomepageElements = () => {
 
   // Hide the grid container before starting the animation.
   animationTimeline = gsap.set(gridContainer, { autoAlpha: 0 });
+   //LISA IST TOLL :)
 
   gsap.timeline({
     defaults: {
