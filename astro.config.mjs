@@ -13,7 +13,4 @@ export default defineConfig({
   site: 'https://playersclub.crnacura.workers.dev/',
 
   integrations: [sitemap()],
-  experimental: {
-    svg: true,
-  },
 });
