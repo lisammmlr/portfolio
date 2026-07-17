@@ -48,6 +48,9 @@ const activeRoute = routes[currentPath] || null;
   header a.current {
     pointer-events: none;
   }
+  header a.current :global(.oh__inner) {
+    border-bottom: 1px solid currentColor;
+  }
   h1 {
     font-size: 1rem;
     font-weight: inherit;
