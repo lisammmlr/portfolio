@@ -5,15 +5,43 @@ const title = "Lisa Marie Memmler - About";
 ---
 
 <BaseLayout title={title}>
-  <div class="content content--page">
-    <h1>Lisa Marie Memmler</h1>
-
+  <div class="content content--page content--about">
     <p>
-      Lisa ist Visual Artist und Grafikdesignerin aus Nürnberg. Derzeit arbeitet
+      Lisa Marie Memmler ist Visual Artist und Grafikdesignerin aus Nürnberg. Derzeit arbeitet
       sie vor allem mit generativer KI und 3D-Software an immersiven und
       interaktiven Installationen und Animationen. 2026 schloss sie ihr
       Designstudium an der TH Nürnberg mit einem Bachelor of Arts ab, betreut
       von Moritz Schwind und Claudia Rohrmoser.
     </p>
+
+    <img
+      class="about-image"
+      loading="lazy"
+      src="/images/about/About_Image_Lisa.png"
+      alt="Lisa Marie Memmler"
+    />
   </div>
 </BaseLayout>
+
+<style>
+  /* About-Seite: Inhalt oben links statt vertikal zentriert */
+  .content--about {
+    justify-content: flex-start;
+  }
+
+  .content--about h1 {
+    margin-top: 0;
+  }
+
+  .content--about p {
+    max-width: 60vw;
+    font-size: 37px;
+    line-height: 39px;
+  }
+  /* Bild Lisa unter Text */
+  .content--about .about-image {
+    width: 15vw;
+    height: auto;
+    margin-top: 2rem;
+  }
+</style>

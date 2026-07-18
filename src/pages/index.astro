@@ -1,10 +1,13 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import WorkGrid from "../components/WorkGrid.astro";
+// Backup Artists-Raster (nicht mehr aktiv, als Fallback erhalten):
 import ArtistGrid from "../components/ArtistGrid.astro";
 import ArtistGridHeader from "../components/ArtistGridHeader.astro";
 import Preloader from "../components/Preloader.astro";
 
+const allWorks = await getCollection("works");
 const allArtists = await getCollection("artists");
 const artistsTotal = allArtists.length;
 const title = "Lisa Marie Memmler - Works";
@@ -17,6 +20,8 @@ const title = "Lisa Marie Memmler - Works";
   -->
   <Preloader />
   <!-- <ArtistGridHeader artistsTotal={artistsTotal} /> -->
-  <ArtistGrid artists={allArtists} />
+  <!-- Backup Artists-Raster (als Fallback erhalten):
+  <ArtistGrid artists={allArtists} /> -->
+  <WorkGrid works={allWorks} />
 </BaseLayout>
 <script src="../scripts/index.js"></script>
