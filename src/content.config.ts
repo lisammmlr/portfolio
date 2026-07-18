@@ -28,5 +28,16 @@ const albums = defineCollection({
   }),
 });
 
+const works = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: "./src/data/works" }),
+  schema: z.object({
+    title: z.string(),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+  }),
+});
+
 // Export all collections
-export const collections = {artists, albums};
+export const collections = {artists, albums, works};
