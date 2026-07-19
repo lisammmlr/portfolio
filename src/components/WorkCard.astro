@@ -3,9 +3,11 @@ import type { CollectionEntry } from "astro:content";
 
 type Props = {
   work: CollectionEntry<"works">;
+  index: number;
 };
 
-const { work } = Astro.props;
+const { work, index } = Astro.props;
+const caption = String(index + 1).padStart(3, "0");
 ---
 
 <a
@@ -16,15 +18,30 @@ const { work } = Astro.props;
   data-name=""
   data-genre=""
   data-astro-prefetch
-  aria-label={work.data.title}></a>
+  aria-label={work.data.title}
+>
+  <span class="artist__image"></span>
+  <span class="artist__caption">{caption}</span>
+</a>
 
 <style>
   a {
+    display: block;
+    margin: 1rem;
+  }
+  .artist__image {
+    display: block;
     background-image: var(--image);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #fff;
     aspect-ratio: 4 / 3;
+  }
+  .artist__caption {
+    display: block;
+    margin-top: 0.5rem;
+    text-align: center;
+    text-decoration: underline;
   }
 </style>

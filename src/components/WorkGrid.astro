@@ -12,7 +12,7 @@ const grid = "works";
 ---
 
 <section class="artist-grid" id="grid" data-grid={grid}>
-  {works.map((work) => <WorkCard work={work} />)}
+  {works.map((work, index) => <WorkCard work={work} index={index} />)}
 </section>
 
 <Tooltip grid={grid} />
@@ -26,6 +26,7 @@ const grid = "works";
     grid-template-columns: repeat(2, calc(100% / 2));
     margin: 1rem 0 10rem;
     min-height: 400px;
+    
     @media screen and (min-width: 30em) {
       grid-template-columns: repeat(4, calc(100% / 4));
     }
